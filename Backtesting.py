@@ -29,7 +29,7 @@ def backtest_analysis(data,indicator_list):
             
             tsiObj = TsiBacktest(data,retorno,indicator_config["indicators"][i],first)
             retorno = tsiObj.retornoTsi
-            
+                        
             first = False
             print("tsi")
         
@@ -136,9 +136,9 @@ macd_config = {
 
 indicator_config ={
     "indicators":[
-        #roc_config,
+        roc_config,
         #tsi_config,
-        macd_config
+        #macd_config
     ]
 }
 

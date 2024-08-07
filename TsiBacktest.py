@@ -14,6 +14,7 @@ class TsiBacktest:
         
         if first:
     
+            
             for i in range(tsi_config["qtd"]):
     
                 indexStr = "Tsi_"+str(i)
@@ -23,8 +24,8 @@ class TsiBacktest:
                             
                     tsi_df[indexStr] = tsi.tsi()
                     tsi_df["Close"] = data["Close"].tail(len(tsi_df))
+                                        
                     
-                	
                     for buyIndex in range(len(tsi_config["buy"])):
 
                         value = tsi_config["buy"][buyIndex]["value"]
@@ -39,7 +40,7 @@ class TsiBacktest:
                                 tsi_df.loc[(tsi_df[indexStr] > value) & (pd.notna(tsi_df["Buy"])), "Buy"] = tsi_df["Close"]
                             else:
                                 tsi_df.loc[(tsi_df[indexStr] < value) & (pd.notna(tsi_df["Buy"])), "Buy"] = tsi_df["Close"]
-    
+                                            
                     
                     for sellIndex in range(len(tsi_config["sell"])):
     
@@ -100,8 +101,6 @@ class TsiBacktest:
                 
         else:
             
-            tsi_df["Buy"] = retorno["Buy"]
-            tsi_df["Sell"] = retorno["Sell"]
             
             for i in range(tsi_config["qtd"]):
             
@@ -148,8 +147,7 @@ class TsiBacktest:
                 retorno["Close"] = tsi_df["Close"]
                         
         
+        
         self.retornoTsi = retorno
         
-    def primeiraOperacao(self,):
-        print("Primeira operacao")
         
