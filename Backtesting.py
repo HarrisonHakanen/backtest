@@ -22,6 +22,7 @@ def backtest_analysis(data,indicator_list):
             rocObj = RocBacktest(data,retorno,indicator_config["indicators"][i],first)            
             retorno = rocObj.retornoRoc
             
+            
             first = False            
             print("roc")
             
@@ -34,10 +35,10 @@ def backtest_analysis(data,indicator_list):
             print("tsi")
         
         if nome == "macd":
-
+            
             macdObj = MacdBacktest(data,retorno,indicator_config["indicators"][i],first)            
             retorno = macdObj.retornoMacd
-            
+            retorno.to_csv("roc_macd.csv")
             first = False            
             print("macd")
 
@@ -136,7 +137,7 @@ macd_config = {
 
 indicator_config ={
     "indicators":[
-        #roc_config,
+        roc_config,
         #tsi_config,
         macd_config
     ]

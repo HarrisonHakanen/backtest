@@ -65,6 +65,8 @@ class TsiBacktest:
                 
         else:
             
+            self.tsi_df["Buy"] = retorno["Buy"]
+            self.tsi_df["Sell"] = retorno["Sell"]
             
             for i in range(tsi_config["qtd"]):
             

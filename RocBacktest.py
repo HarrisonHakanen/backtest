@@ -60,6 +60,9 @@ class RocBacktest:
                 
         else:
             
+            self.roc_df["Buy"] = retorno["Buy"]
+            self.roc_df["Sell"] = retorno["Sell"]
+            
             
             for i in range(roc_config["qtd"]):
 
