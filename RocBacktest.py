@@ -30,12 +30,12 @@ class RocBacktest:
                     
                     for buyIndex in range(len(roc_config["buy"])):
                         
-                        self.greaterThanValidationFirst("buy","Buy",buyIndex,indexStr);                    
+                        self.greaterThanValidationFirst("buy","Buy",buyIndex,indexStr)
                             
                         
                     for sellIndex in range(len(roc_config["sell"])):
                         
-                        self.greaterThanValidationFirst("sell","Sell",sellIndex,indexStr);                        
+                        self.greaterThanValidationFirst("sell","Sell",sellIndex,indexStr)
                             
 
                 else:

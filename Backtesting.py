@@ -136,9 +136,9 @@ macd_config = {
 
 indicator_config ={
     "indicators":[
-        roc_config,
+        #roc_config,
         #tsi_config,
-        #macd_config
+        macd_config
     ]
 }
 
